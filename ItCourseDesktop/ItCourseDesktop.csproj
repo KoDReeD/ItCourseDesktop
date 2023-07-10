@@ -1,0 +1,118 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Remove=".gitignore" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <TrimmerRootDescriptor Include="Roots.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="0.10.18" />
+        <PackageReference Include="Avalonia.Desktop" Version="0.10.18" />
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.18" />
+        <PackageReference Include="MessageBox.Avalonia" Version="2.1.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="XamlNameReferenceGenerator" Version="1.5.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Assets\img_about.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Assets\course_icon.png" />
+      <None Remove="Assets\powerOff_icon.png" />
+      <None Remove="Assets\maximize_image.png" />
+      <None Remove="Assets\power-off_icon.png" />
+      <None Remove="Assets\maximize.png" />
+      <None Remove="Assets\maximize_icon.png" />
+      <AvaloniaResource Include="Assets\maximize_icon.png" />
+      <None Remove="Assets\on-off-button_icon.png" />
+      <AvaloniaResource Include="Assets\on-off-button_icon.png" />
+      <None Remove="Fonts\orbitron-medium.ttf" />
+      <AvaloniaResource Include="Fonts\orbitron-medium.ttf" />
+      <None Remove="Assets\online-course.png" />
+      <None Remove="Assets\learning.png" />
+      <AvaloniaResource Include="Assets\learning.png" />
+      <None Remove="Assets\category.png" />
+      <AvaloniaResource Include="Assets\category.png" />
+      <None Remove="Assets\monitor.png" />
+      <AvaloniaResource Include="Assets\monitor.png" />
+      <None Remove="Assets\user.png" />
+      <AvaloniaResource Include="Assets\user.png" />
+      <None Remove="Assets\right-arrow-triangle.png" />
+      <AvaloniaResource Include="Assets\right-arrow-triangle.png" />
+      <None Remove="Assets\profiles.png" />
+      <None Remove="Assets\resume.png" />
+      <AvaloniaResource Include="Assets\resume.png" />
+      <None Remove="Assets\eye.png" />
+      <AvaloniaResource Include="Assets\eye.png" />
+      <None Remove="Assets\hide_eye.png" />
+      <AvaloniaResource Include="Assets\hide_eye.png" />
+      <None Remove="Assets\account_icon_bold.png" />
+      <AvaloniaResource Include="Assets\account_icon_bold.png" />
+      <None Remove="Assets\account_item.png" />
+      <AvaloniaResource Include="Assets\account_item.png" />
+      <None Remove="Assets\sort.png" />
+      <AvaloniaResource Include="Assets\sort.png" />
+      <None Remove="Assets\left-arrow.png" />
+      <AvaloniaResource Include="Assets\left-arrow.png" />
+      <None Remove="Assets\right-arrow.png" />
+      <AvaloniaResource Include="Assets\right-arrow.png" />
+      <None Remove="Assets\add-user.png" />
+      <AvaloniaResource Include="Assets\add-user.png" />
+      <None Remove="Assets\add_category_icon.png" />
+      <AvaloniaResource Include="Assets\add_category_icon.png" />
+      <AvaloniaResource Include="Assets\add_course_icon.png" />
+      <AvaloniaResource Include="Assets\add_tehnology_icon.png" />
+      <AvaloniaResource Include="Assets\add_course_icon.png" />
+      <None Remove="Assets\add_course_icon.png" />
+      <AvaloniaResource Include="Assets\add_course_icon.png" />
+      <AvaloniaResource Include="Assets\add_tehnology_icon.png" />
+      <None Remove="Assets\add_tehnology_icon.png" />
+      <AvaloniaResource Include="Assets\add_tehnology_icon.png" />
+      <AvaloniaResource Include="Assets\star.png" />
+      <None Remove="Assets\star.png" />
+      <AvaloniaResource Include="Assets\star.png" />
+      <None Remove="Assets\plus.png" />
+      <AvaloniaResource Include="Assets\plus.png" />
+      <None Remove="Assets\minus_icon.png" />
+      <AvaloniaResource Include="Assets\minus_icon.png" />
+      <None Remove="Assets\delete.png" />
+      <AvaloniaResource Include="Assets\delete.png" />
+      <None Remove="Assets\noImage.jpg" />
+      <AvaloniaResource Include="Assets\noImage.jpg" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Windows\AddEditCategoryWindow.axaml.cs">
+        <DependentUpon>AddEditCategoryWindow.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Windows\AddEditTehnologiesWindow.axaml.cs">
+        <DependentUpon>AddEditTehnologiesWindow.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Windows\AuthorizeWindow.axaml.cs">
+        <DependentUpon>AuthorizeWindow.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Windows\MainWindow.axaml.cs">
+        <DependentUpon>MainWindow.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="WWW\жв.axaml" />
+    </ItemGroup>
+</Project>

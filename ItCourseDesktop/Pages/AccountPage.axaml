@@ -1,0 +1,98 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ItCourseDesktop.Pages.AccountPage"
+             Background="#23262B">
+
+  <UserControl.Styles>
+
+    <Style Selector="TextBox">
+      <Setter Property="Background" Value="#3A3D41"></Setter>
+      <Setter Property="Foreground" Value="#989BA0"></Setter>
+      <Setter Property="Height" Value="30"></Setter>
+      <Setter Property="BorderThickness" Value="0"></Setter>
+    </Style>
+
+    <Style Selector="TextBlock">
+      <Setter Property="FontWeight" Value="Medium"></Setter>
+      <Setter Property="FontFamily" Value="Roboto"></Setter>
+    </Style>
+
+    <Style Selector="Button">
+      <Setter Property="FontWeight" Value="Medium"></Setter>
+      <Setter Property="FontFamily" Value="Roboto"></Setter>
+      <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+      <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+    </Style>
+
+
+  </UserControl.Styles>
+
+  <ScrollViewer Padding="10">
+
+    <Grid>
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"></RowDefinition>
+        <RowDefinition Height="*"></RowDefinition>
+      </Grid.RowDefinitions>
+
+      <Grid Row="0">
+
+        <TextBlock Text="Account"
+                   Foreground="#FD4A0D"
+                   FontSize="30"
+                   FontWeight="ExtraBold"
+                   FontFamily="Roboto"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Margin="0">
+        </TextBlock>
+
+      </Grid>
+
+      <Grid Row="1" Background="transparent">
+
+        <DockPanel LastChildFill="True"
+                   VerticalAlignment="Top"
+                   Margin="20,10,0,0">
+
+          <Image Source="/Assets/account_icon_bold.png"
+                 DockPanel.Dock="Left"
+                 Height="50"
+                 Width="50">
+          </Image>
+
+          <TextBlock Text=""
+                     Name="TextBlockUsername"
+                     DockPanel.Dock="Left"
+                     Foreground="#FFFFFF"
+                     FontSize="25"
+                     MaxLines="2"
+                     VerticalAlignment="Center"
+                     Margin="20,0,0,0">
+          </TextBlock>
+
+          <!-- <Button Content="Change Password" -->
+          <!--         VerticalAlignment="Center" -->
+          <!--         DockPanel.Dock="Right" -->
+          <!--         HorizontalAlignment="Right" -->
+          <!--         Margin="0,0,20,0" -->
+          <!--         FontSize="17" -->
+          <!--         Height="40" -->
+          <!--         Foreground="#FFFFFF"> -->
+          <!-- </Button> -->
+
+
+        </DockPanel>
+
+
+      </Grid>
+
+    </Grid>
+
+  </ScrollViewer>
+
+</UserControl>

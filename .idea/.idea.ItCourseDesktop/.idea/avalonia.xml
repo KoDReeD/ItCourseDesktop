@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="ItCourseDesktop/AddEditCategoryWindow.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/AddEditTehnologiesWindow.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/App.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/AuthorizeWindow.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/MainWindow.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/MyMessageBox.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Pages/AccountPage.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Pages/CategoriesPage.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Pages/CoursesPage.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Pages/Page Categories.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Pages/RequestsPage.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Pages/TehnologiesPage.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Pages/UsersPage.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/RegistrationWindow.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Templates.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/WWW/жв.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Windows/AddEditCategoryWindow.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Windows/AddEditCourseWindow.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Windows/AddEditTehnologiesWindow.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Windows/AddUserWindow.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Windows/AuthorizeWindow.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Windows/ChangeStatusWindow.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Windows/MainWindow.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Windows/dl.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+        <entry key="ItCourseDesktop/Windows/s.s.axaml" value="ItCourseDesktop/ItCourseDesktop.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,93 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="400" Height="300"
+        x:Class="ItCourseDesktop.MyMessageBox"
+        SystemDecorations="None"
+        WindowStartupLocation="CenterScreen"
+        Title="MyMessageBox">
+
+  <Window.Styles>
+    <Style Selector="Button.status">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Height" Value="30" />
+      <Setter Property="Width" Value="40" />
+    </Style>
+
+    <Style Selector="Button.result">
+      <Setter Property="Background" Value="#FD4A0D" />
+      <Setter Property="FontFamily" Value="Roboto" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+      <Setter Property="Foreground" Value="#FFFFFF" />
+      <Setter Property="FontSize" Value="14" />
+      <Setter Property="Height" Value="30" />
+      <Setter Property="Width" Value="100" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    
+    <Style Selector="TextBlock">
+      <Setter Property="FontFamily" Value="Roboto" />
+      <Setter Property="FontWeight" Value="Medium" />
+    </Style>
+  </Window.Styles>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="30"></RowDefinition>
+      <RowDefinition></RowDefinition>
+    </Grid.RowDefinitions>
+    
+    <Grid Background="#202327"
+          PointerPressed="Window_PointerPressed">
+
+      <Button Click="ButtonClose_OnClick"
+              Classes="status"
+              HorizontalAlignment="Right">
+        <Image Source="Assets/on-off-button_icon.png"></Image>
+      </Button>
+    </Grid>
+    
+    <ScrollViewer Grid.Row="1">
+    <Grid Row="1"
+          Background="#30353B">
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="50"></RowDefinition>
+        <RowDefinition Height="*"></RowDefinition>
+        <RowDefinition Height="70"></RowDefinition>
+      </Grid.RowDefinitions>
+
+      <TextBlock Name="TextBlockTitle"
+                 MaxLines="2"
+                 Grid.Row="0"
+                 Foreground="#FFFFFF"
+                 HorizontalAlignment="Center"
+                 FontSize="25"
+                 Margin="0,15,0,0">
+      </TextBlock>
+
+      <ScrollViewer Grid.Row="1">
+        <TextBlock Name="TextBlockMessage"
+                   TextWrapping="Wrap"
+                   Margin="40,20,40,0"
+                   Foreground="#FFFFFF"
+                   FontSize="16">
+        </TextBlock>
+      </ScrollViewer>
+
+      <StackPanel Name="StackPanelButtons"
+                  Orientation="Horizontal"
+                  HorizontalAlignment="Center"
+                  Margin="0,0,0,20"
+                  Spacing="10"
+                  Grid.Row="3">
+
+      </StackPanel>
+    </Grid>
+    </ScrollViewer>
+
+  </Grid>
+
+</Window>

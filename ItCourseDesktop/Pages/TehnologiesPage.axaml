@@ -1,0 +1,226 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" MinWidth="510" MinHeight="470"
+             x:Class="ItCourseDesktop.Pages.TehnologiesPage">
+   <UserControl.Styles>
+    <Style Selector="ListBoxItem:selected /template/ ContentPresenter">
+      <Setter Property="Background" Value="#202327" />
+    </Style>
+
+    <Style Selector="TextBox">
+      <Setter Property="Background" Value="#3A3D41"></Setter>
+      <Setter Property="Foreground" Value="#989BA0"></Setter>
+      <Setter Property="Height" Value="30"></Setter>
+      <Setter Property="BorderThickness" Value="0"></Setter>
+    </Style>
+
+    <Style Selector="Button">
+      <Setter Property="FontFamily" Value="Roboto" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+
+    <Style Selector="Button.course">
+      <Setter Property="Height" Value="30" />
+      <Setter Property="Width" Value="120" />
+      <Setter Property="Foreground" Value="Black" />
+    </Style>
+
+    <Style Selector="Button.foundMenu">
+      <Setter Property="Height" Value="40" />
+      <Setter Property="FontSize" Value="16" />
+      <Setter Property="Foreground" Value="#FFFFFF" />
+      <Setter Property="Background" Value="transparent" />
+    </Style>
+     
+     <Style Selector="Button.page">
+       <Setter Property="Height" Value="30" />
+       <Setter Property="Foreground" Value="#FFFFFF" />
+       <Setter Property="Background" Value="transparent" />
+     </Style>
+  </UserControl.Styles>
+
+  <Grid Background="#23262B">
+
+    <ScrollViewer Name="PageCourses"
+                  Padding="10">
+
+      <Grid>
+
+        <Grid.RowDefinitions>
+          <RowDefinition Height="100"></RowDefinition>
+          <RowDefinition Height="*"></RowDefinition>
+          <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!-- Поисковое меню -->
+
+        <StackPanel>
+
+          <TextBlock Text="Tehnologies"
+                     Foreground="#FD4A0D"
+                     FontSize="30"
+                     FontWeight="ExtraBold"
+                     FontFamily="Roboto"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     Margin="0">
+          </TextBlock>
+
+          <Grid Margin="0,15,0,0">
+
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="1*"></ColumnDefinition>
+              <ColumnDefinition Width="1*"></ColumnDefinition>
+              <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Grid.Column="0"
+                     KeyUp="TextBoxTitleFound_OnKeyUp"
+                     Name="TextBoxTitleFound"
+                     Margin="10,0,0,0"
+                     VerticalAlignment="Top">
+            </TextBox>
+            
+            <DockPanel Grid.Column="1"
+                       VerticalAlignment="Center"
+                       Margin="25,0,0,0"
+                       LastChildFill="True">
+              <Image Source="/Assets/sort.png"
+                     DockPanel.Dock="Left"
+                     Width="20"
+                     Height="20">
+              </Image>
+              <Button Content="Title"
+                      Margin="0,0,0,0"
+                      Click="ButtonOrderByTitle_OnClick"
+                      DockPanel.Dock="Left"
+                      Name="ButtonOrderByTitle"
+                      Classes="foundMenu"
+                      Tag="ASC">
+              </Button>
+             
+            </DockPanel>
+            
+            <Button Grid.Column="3"
+                    Click="ButtonAddEdit_OnClick"
+                    DockPanel.Dock="Right"
+                    Background="#FD4A0D"
+                    VerticalAlignment="Top"
+                    Width="50"
+                    Height="32"
+                    Margin="5,0,30,0"
+                    HorizontalAlignment="Right">
+              <Image Source="/Assets/add_tehnology_icon.png"
+                     Height="22"
+                     Width="22">
+              </Image>
+            </Button>
+
+          </Grid>
+
+        </StackPanel>
+
+        <!-- Основной контент -->
+
+        <TextBlock Name="TextBlockNoContent"
+                   IsVisible="False"
+                   Grid.Row="1"
+                   Foreground="#FFFFFF"
+                   Text="Технологии не найдены"
+                   FontSize="30"
+                   FontFamily="Roboto"
+                   FontWeight="Bold"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center">
+        </TextBlock>
+        
+        <ListBox Grid.Row="1"
+                 Name="TehnologyListBox"
+                 Margin="0,0,0,20"
+                 Background="transparent">
+          <ListBox.ItemsPanel>
+            <ItemsPanelTemplate>
+              <WrapPanel Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+          </ListBox.ItemsPanel>
+          <ListBox.ItemTemplate>
+
+            <DataTemplate>
+
+              <Grid>
+                <Border Background="#2E333A"
+                        CornerRadius="20">
+                  <StackPanel Width="300"
+                              Height="100"
+                              Margin="16"
+                              HorizontalAlignment="Center">
+
+                    <TextBlock Text="{Binding Title}"
+                               HorizontalAlignment="Center"
+                               Foreground="#FFFFFF"
+                               Height="50"
+                               TextWrapping="Wrap"
+                               MaxLines="3"
+                               FontWeight="ExtraBold">
+
+                    </TextBlock>
+                    
+                  </StackPanel>
+                </Border>
+
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            Orientation="Horizontal"
+                            Margin="10"
+                            Spacing="10">
+                  <Button Content="Edit"
+                          Click="ButtonAddEdit_OnClick"
+                          Tag="{Binding Id}"
+                          Classes="course"
+                          Background="#24282E">
+                  </Button>
+                  <Button Content="Delete"
+                          Click="ButtonDelete_OnClick"
+                          Tag="{Binding Id}"
+                          Classes="course"
+                          Background="#24282E">
+                  </Button>
+                </StackPanel>
+              </Grid>
+
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <!-- Стрелки навигации -->
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Spacing="40">
+          <Button Name="ButtonLastPage"
+                  Classes="page"
+                  Click="ButtonPage_OnClick">
+            <Image Source="/Assets/left-arrow.png">
+
+            </Image>
+          </Button>
+
+          <Button Name="ButtonNextPage"
+                  Classes="page"
+                  Click="ButtonPage_OnClick">
+            <Image Source="/Assets/right-arrow.png">
+
+            </Image>
+          </Button>
+        </StackPanel>
+
+      </Grid>
+
+    </ScrollViewer>
+  </Grid>
+</UserControl>

@@ -1,0 +1,195 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        MinWidth="700"
+        MinHeight="500"
+        SystemDecorations="None"
+        WindowStartupLocation="CenterScreen"
+        x:Class="ItCourseDesktop.Windows.MainWindow"
+        Title="ItCourseDesktop"
+        CanResize="True">
+
+  <Window.Styles>
+
+    <Style Selector="Button.status">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Height" Value="30" />
+      <Setter Property="Width" Value="40" />
+    </Style>
+
+    <Style Selector="Button.menu">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Height" Value="40" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+      <Setter Property="FontWeight" Value="Light" />
+      <Setter Property="Foreground" Value="#FFFFFF" />
+      <Setter Property="Width" Value="230" />
+    </Style>
+
+    <Style Selector="MenuItem">
+      <Setter Property="Height" Value="60" />
+      <Setter Property="Foreground" Value="#FFFFFF" />
+    </Style>
+
+  </Window.Styles>
+
+  <Grid>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="170"></ColumnDefinition>
+      <ColumnDefinition Width="*"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+
+    <!-- Меню навигации -->
+
+    <StackPanel
+      Orientation="Vertical"
+      Background="#2E333A">
+
+      <!-- Заголовок -->
+
+      <Grid
+        VerticalAlignment="Top"
+        Height="50"
+        Margin="0,30,0,30">
+        <Border BorderBrush="#FD4A0D"
+                BorderThickness="0,0,4,0"
+                CornerRadius="1"
+                Height="20">
+          <Grid Height="50">
+            <TextBlock Text="I T   C O U R S E S"
+                       Foreground="#FFFFFF"
+                       FontWeight="Medium"
+                       FontSize="15"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center">
+            </TextBlock>
+          </Grid>
+        </Border>
+      </Grid>
+
+      <!-- Меню -->
+
+      <StackPanel Height="450">
+
+        <Button Name="ButtonCourse"
+                Classes="menu"
+                Click="MenuButton_OnClick">
+          <StackPanel Orientation="Horizontal">
+            <Image Source="/Assets/learning.png"
+                   Width="20"
+                   Height="22"
+                   Stretch="Fill"
+                   Margin="3,0,5,0" />
+            <TextBlock Text="Courses"
+                       Margin="5" />
+          </StackPanel>
+        </Button>
+
+        <Button Name="ButtonCategory"
+                Classes="menu"
+                Click="MenuButton_OnClick">
+          <StackPanel Orientation="Horizontal">
+            <Image Source="/Assets/category.png"
+                   Width="18"
+                   Height="20"
+                   Margin="5,0,5,0" />
+            <TextBlock Text="Categories"
+                       Margin="5" />
+          </StackPanel>
+        </Button>
+
+        <Button Name="ButtonTehnology"
+                Classes="menu"
+                Click="MenuButton_OnClick">
+          <StackPanel Orientation="Horizontal">
+            <Image Source="/Assets/monitor.png"
+                   Width="18"
+                   Height="19"
+                   Margin="5,0,5,0" />
+            <TextBlock Text="Tehnologies"
+                       Margin="5" />
+          </StackPanel>
+        </Button>
+
+        <Button Name="ButtonUsers"
+                Classes="menu"
+                Click="MenuButton_OnClick">
+          <StackPanel Orientation="Horizontal">
+            <Image Source="/Assets/user.png"
+                   Width="18"
+                   Height="19"
+                   Margin="6,0,5,0" />
+            <TextBlock Text="Users"
+                       Margin="5" />
+          </StackPanel>
+        </Button>
+
+        <Button Classes="menu"
+                Name="ButtonRequest"
+                Click="MenuButton_OnClick">
+          <StackPanel Orientation="Horizontal">
+            <Image Source="/Assets/resume.png"
+                   Width="18"
+                   Height="19"
+                   Margin="7,0,5,0" />
+            <TextBlock Text="Request"
+                       Margin="5" />
+          </StackPanel>
+        </Button>
+      </StackPanel>
+    </StackPanel>
+
+    <Button Name="ButtonAccount"
+            Click="MenuButton_OnClick"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Center"
+            CornerRadius="20"
+            Height="40"
+            Width="40"
+            Margin="0,0,0,10">
+      <Image Source="/Assets/account_icon_bold.png">
+
+      </Image>
+    </Button>
+
+
+    <!-- Статус бар -->
+    <Grid Column="1"
+          Background="#23262B">
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="30"></RowDefinition>
+        <RowDefinition Height="*"></RowDefinition>
+      </Grid.RowDefinitions>
+
+      <Grid Row="0"
+            Background="#202327"
+            PointerPressed="Window_PointerPressed">
+        <StackPanel HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+          <Button Classes="status"
+                  Click="ButtonWinSize_OnClick">
+            <Image Source="/Assets/maximize_icon.png"></Image>
+          </Button>
+          <Button Classes="status"
+                  Click="ButtonClose_OnClick">
+            <Image Source="/Assets/on-off-button_icon.png"></Image>
+          </Button>
+        </StackPanel>
+      </Grid>
+
+
+      <!-- Отображение контента -->
+
+      <Grid Row="1">
+        <ContentControl x:Name="contentControl" />
+      </Grid>
+
+    </Grid>
+
+  </Grid>
+
+</Window>
